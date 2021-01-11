@@ -18,9 +18,11 @@ function BreakInterval(props) {
         <section>
             <h4>Break Length</h4>
             <section className = "interval-container">
-                <button onClick={decreaseCounter}>-</button>
+                <button disabled={props.start === true ? "disabled": ""}
+                onClick={decreaseCounter}>-</button>
                 <p className = "interval-length">{props.BreakInterval}</p>
-                <button onClick={increaseCounter}>+</button>
+                <button disabled={props.start === true ? "disabled": ""}
+                onClick={increaseCounter}>+</button>
             </section>
         </section>
     );

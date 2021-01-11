@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       breakLength: 5,
       sessionLength: 25,
-      timerMinute: 25
+      timerMinute: 25,
+      isStart: false
     };
     this.onIncreaseBreakLength = this.onIncreaseBreakLength.bind(this);
     this.onDecreaseBreakLength = this.onDecreaseBreakLength.bind(this);
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.onDecreaseSessionLength = this.onDecreaseSessionLength.bind(this);
     this.onToggleInterval = this.onToggleInterval.bind(this);
     this.onUpdateTimerMinute = this.onUpdateTimerMinute.bind(this);
+    this.onStart = this.onStart.bind(this);
     this.onRefresh = this.onRefresh.bind(this);
   }
   onIncreaseBreakLength() {
@@ -76,6 +78,11 @@ class App extends React.Component {
       timerMinute:this.state.sessionLength
     })
   }
+  onStart(isStart){
+    this.setState({
+      isStart: isStart
+    })
+  }
 
   render() {
     return (
@@ -83,11 +90,13 @@ class App extends React.Component {
         <h2>Pomodoro Clock</h2>
         <section className="interval-length-container">
           <BreakInterval
+            isStart={this.state.isStart}
             BreakInterval={this.state.breakLength}
             increaseBreak={this.onIncreaseBreakLength}
             decreaseBreak={this.onDecreaseBreakLength}
           />
           <SessionLength
+            isStart={this.state.isStart}
             SessionLength={this.state.sessionLength}
             increaseSession={this.onIncreaseSessionLength}
             decreaseSession={this.onDecreaseSessionLength}
@@ -99,6 +108,7 @@ class App extends React.Component {
           updateTimerMinute={this.onUpdateTimerMinute}
           toggleInterval={this.onToggleInterval}
           refresh={this.onRefresh}
+          start={this.onStart}
         />
       </main>
     );
