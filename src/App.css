@@ -1,0 +1,55 @@
+main {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    font-size: 4rem;
+    font-weight: 400;
+}
+h4 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.interval-container {
+    display: flex;
+    margin: 0 40px;
+    align-items: center;
+}
+.interval-length-container {
+    display: flex;
+}
+button {
+    padding: 5px 12px;
+    margin: 0 10px;
+    height: 25px;
+    background-color:black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+.interval-length {
+    font-size: 2rem;
+    margin: 0 10px;
+}
+.timer-container {
+    border: 2px solid;
+    margin-top: 40px;
+    border-radius: 25px;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+}
+.timer {
+    font-size: 2rem;
+}
+.timer-actions {
+    margin-top: 20px;
+    text-align: center;
+}
